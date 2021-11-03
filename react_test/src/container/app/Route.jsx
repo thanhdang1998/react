@@ -4,14 +4,14 @@ import Login from '../login/components/LoginForm'
 import Register from '../register/components/RegisterForm';
 import Home from '../home/HomeIndex';
 
-function Router() {
+function Router({ user }) {
+
     return (
         <>
             <BrowserRouter>
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
-
-                <Route path="/" exact component={Home} />
+                <Route path="/" exact component={() => <Home user={user} />} />
             </BrowserRouter>
         </>
     );

@@ -1,11 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
 
 function RegisterForm() {
     const { register, handleSubmit } = useForm();
-    function onSubmit(data) {
-        console.log(data);
+    async function onSubmit(data) {
+        await axios.post('register', data);
     }
 
     return (
